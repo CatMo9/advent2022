@@ -31,12 +31,7 @@ function findHeaviestElf(data) {
 
       if (newLineCount > 1) {
         // this means there were two newLines in a row, reset all variables
-        // console.log(
-        //   `Which is bigger? currentSum ${currentSum} or BIGGESTSum ${biggestSum}`
-        // );
         biggestSum = findBiggestSum(biggestSum, currentSum);
-        // console.log(`This is the biggest: ${biggestSum}`);
-
         currentSum = 0;
         newLineCount = 0;
         if (i + 1 < data.length) {
@@ -45,24 +40,16 @@ function findHeaviestElf(data) {
       } else {
         // add the currentNumber to the currentSum
         currentNumber = Number(data.substring(substringStart, i));
-        // console.log(`currentNumber = ${currentNumber}`);
         currentSum += currentNumber;
-        // console.log(`AND currentSum = ${currentSum}`);
         substringStart = i + 1;
       }
     }
     i++;
   }
   currentNumber = Number(data.substring(substringStart, i));
-  // console.log(`currentNumber = ${currentNumber}`);
   currentSum += currentNumber;
-  // console.log(`AND currentSum = ${currentSum}`);
-  // console.log(
-  // `Which is bigger? currentSum ${currentSum} or BIGGESTSum ${biggestSum}`
-  // );
   biggestSum = findBiggestSum(biggestSum, currentSum);
-  // console.log(`This is the biggest: ${biggestSum}`);
   return biggestSum;
 }
 
-console.log("is should be 206:", findHeaviestElf(premadeData));
+//console.log("is should be 206:", findHeaviestElf(premadeData));

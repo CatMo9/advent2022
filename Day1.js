@@ -1,4 +1,4 @@
-const premadeData = require("./Day1Data");
+const premadeData = require("./DummyData1");
 const testSmallData = require("./SmallData");
 
 //find biggest sum
